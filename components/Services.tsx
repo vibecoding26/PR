@@ -1,14 +1,13 @@
 const services = [
-  { num: '01', title: 'Google News Article', desc: 'Get published and indexed on Google News for instant visibility and search authority.' },
-  { num: '02', title: 'Bing News Article', desc: 'Reach a wider audience through Bing News distribution and Microsoft news surfaces.' },
-  { num: '03', title: 'Business Insider Feature', desc: 'Establish elite credibility with a Business Insider feature story.' },
-  { num: '04', title: 'AP News Feature', desc: 'Gain unparalleled trust with an Associated Press News placement.' },
-  { num: '05', title: 'SEO Article', desc: 'Rank higher with SEO-optimized content that drives consistent organic traffic.' },
-  { num: '06', title: 'AEO Content', desc: 'Answer Engine Optimization for AI-first search and LLM discovery.' },
-  { num: '07', title: 'Founder Story', desc: 'Share your journey and build a compelling, memorable personal brand.' },
-  { num: '08', title: 'Product Launch Article', desc: 'Announce your launch with a press-ready product feature article.' },
-  { num: '09', title: 'Product Update Article', desc: 'Keep your audience informed about new features and major updates.' },
-  { num: '10', title: 'Thought Leadership', desc: 'Position yourself as an industry expert with authoritative, cited content.' },
+  { num: '01', title: 'PR Service', desc: 'Full-spectrum public relations strategy — from media outreach to brand positioning and press release distribution.' },
+  { num: '02', title: 'SaaS PR', desc: 'Specialized PR for SaaS companies — product launches, funding announcements, and thought leadership placements.' },
+  { num: '03', title: 'Event PR', desc: 'Drive attendance and media coverage for conferences, product launches, webinars, and live events.' },
+  { num: '04', title: 'Marketing PR', desc: 'Amplify your campaigns with strategic earned media that reinforces your marketing message across channels.' },
+  { num: '05', title: 'Healthcare PR', desc: 'Build trust and authority in healthcare — from medical innovations to patient success stories and industry commentary.' },
+  { num: '06', title: 'Technology PR', desc: 'Get your tech product in front of the right journalists, analysts, and publications that shape the industry narrative.' },
+  { num: '07', title: 'E-Commerce PR', desc: 'Boost brand visibility and buyer trust with media placements that drive traffic and conversions for e-commerce brands.' },
+  { num: '08', title: 'Corporate PR Services', desc: 'Comprehensive corporate communications — executive profiling, investor relations, and enterprise brand building.' },
+  { num: '09', title: 'Reputation Management PR', desc: 'Protect and elevate your brand image with proactive media strategies and authoritative content that shapes perception.' },
 ];
 
 export default function Services() {
