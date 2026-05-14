@@ -1,51 +1,99 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A0A0A] pt-16">
-      {/* Background glow */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#080808] pt-20">
+
+      {/* Deep layered background */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-[#E8231A]/8 rounded-full blur-[140px]" />
-        <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-[#F5E500]/4 rounded-full blur-[100px]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[#E8231A]/[0.07] rounded-full blur-[160px]" />
+        <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#E8231A]/[0.04] rounded-full blur-[120px]" />
+        <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-[#F5E500]/[0.03] rounded-full blur-[130px]" />
+        {/* Grid lines */}
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
+            backgroundSize: '80px 80px',
+          }}
+        />
+        {/* Radial vignette over grid */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#080808_80%)]" />
+      </div>
+
+      {/* Floating orbs */}
+      <div className="absolute top-24 right-16 w-3 h-3 bg-[#E8231A] rounded-full opacity-60 animate-float blur-[1px]" />
+      <div className="absolute top-40 left-20 w-2 h-2 bg-[#F5E500] rounded-full opacity-40 animate-float delay-300" />
+      <div className="absolute bottom-32 right-32 w-2 h-2 bg-[#E8231A] rounded-full opacity-30 animate-float delay-500" />
+      <div className="absolute bottom-48 left-48 w-1.5 h-1.5 bg-white rounded-full opacity-20 animate-float delay-200" />
+
+      {/* Rotating ring */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] pointer-events-none opacity-[0.04]">
+        <div className="w-full h-full rounded-full border border-white animate-spin-slow" />
+      </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] pointer-events-none opacity-[0.02]">
+        <div className="w-full h-full rounded-full border border-white" style={{ animation: 'rotate-slow 40s linear infinite reverse' }} />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-white/5 border border-white/8 rounded-full px-4 py-1.5 mb-8">
-          <span className="w-1.5 h-1.5 bg-[#E8231A] rounded-full" />
-          <span className="text-xs text-white/50 tracking-[0.15em] uppercase">
+        <div className="animate-fadeIn inline-flex items-center gap-2.5 glass rounded-full px-5 py-2 mb-10">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E8231A] opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#E8231A]" />
+          </span>
+          <span className="text-xs text-white/50 tracking-[0.18em] uppercase font-medium">
             PR &amp; Media Placement Platform
           </span>
         </div>
 
         {/* Headline */}
-        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.05] tracking-tight mb-6">
+        <h1 className="animate-fadeUp delay-100 text-5xl sm:text-6xl lg:text-[80px] font-extrabold text-white leading-[1.02] tracking-[-0.03em] mb-6">
           Get Featured.{' '}
-          <span className="text-[#E8231A]">Build Authority.</span>
+          <span className="text-gradient">Build Authority.</span>
           <br />
-          Track Your PR Growth.
+          <span className="text-white/90">Track Your PR Growth.</span>
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg sm:text-xl text-white/50 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="animate-fadeUp delay-200 text-lg sm:text-xl text-white/40 max-w-2xl mx-auto mb-12 leading-[1.75] font-normal">
           PrimePressPro helps founders and companies publish powerful PR stories,
-          build media credibility, and manage their article journey from one
-          simple dashboard.
+          build media credibility, and manage their article journey — all from{' '}
+          <span className="text-white/65">one simple dashboard.</span>
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="w-full sm:w-auto bg-[#E8231A] hover:bg-[#c91d15] text-white font-semibold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:-translate-y-0.5 shadow-[0_8px_30px_rgba(232,35,26,0.3)] hover:shadow-[0_12px_40px_rgba(232,35,26,0.4)]">
-            Start Your PR Campaign
+        <div className="animate-fadeUp delay-300 flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
+          <button className="shine group relative w-full sm:w-auto bg-[#E8231A] text-white font-bold px-9 py-4 rounded-2xl text-base transition-all duration-300 hover:-translate-y-1 animate-pulse-glow">
+            <span className="relative z-10 flex items-center gap-2">
+              Start Your PR Campaign
+              <svg className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </span>
           </button>
-          <button className="w-full sm:w-auto bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-semibold px-8 py-4 rounded-xl text-base transition-all duration-200 hover:-translate-y-0.5">
+          <button className="w-full sm:w-auto glass text-white font-semibold px-9 py-4 rounded-2xl text-base transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.06]">
             View Services
           </button>
         </div>
 
-        {/* Social proof */}
-        <p className="mt-10 text-sm text-white/25">
-          Trusted by 200+ founders, startups, and growing brands
-        </p>
+        {/* Stats row */}
+        <div className="animate-fadeUp delay-400 flex flex-wrap justify-center gap-8 sm:gap-16">
+          {[
+            { value: '200+', label: 'Founders Served' },
+            { value: '98%', label: 'Publish Rate' },
+            { value: '3–7', label: 'Days to Live' },
+          ].map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="number-font text-3xl font-bold text-white">{stat.value}</div>
+              <div className="text-xs text-white/30 mt-1 tracking-wide uppercase">{stat.label}</div>
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#080808] to-transparent pointer-events-none" />
     </section>
   );
 }
