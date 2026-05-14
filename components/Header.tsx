@@ -25,14 +25,12 @@ export default function Header() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-[#080808]/80 backdrop-blur-2xl border-b border-white/[0.06] shadow-[0_1px_40px_rgba(0,0,0,0.4)]'
+          ? 'bg-[#030711]/85 backdrop-blur-2xl border-b border-[#6366F1]/10 shadow-[0_1px_40px_rgba(99,102,241,0.08)]'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 py-4">
-
-          {/* Logo */}
           <Link href="/" className="flex items-center group">
             <Image
               src="/logo.png"
@@ -44,31 +42,28 @@ export default function Header() {
             />
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-sm text-white/50 hover:text-white transition-colors duration-200 px-4 py-2 rounded-lg hover:bg-white/[0.04] group"
+                className="relative text-sm text-white/50 hover:text-white transition-colors duration-200 px-4 py-2 rounded-lg hover:bg-[#6366F1]/8 group"
               >
                 {link.label}
-                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 group-hover:w-3/4 h-px bg-[#E8231A]/60 transition-all duration-300 rounded-full" />
+                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 group-hover:w-3/4 h-px bg-[#6366F1]/60 transition-all duration-300 rounded-full" />
               </Link>
             ))}
           </nav>
 
-          {/* Desktop CTAs */}
           <div className="hidden md:flex items-center gap-3">
-            <button className="text-sm text-white/50 hover:text-white transition-all duration-200 px-4 py-2 rounded-lg hover:bg-white/[0.04]">
+            <button className="text-sm text-white/50 hover:text-white transition-all duration-200 px-4 py-2 rounded-lg hover:bg-[#6366F1]/8">
               Login
             </button>
-            <button className="shine relative bg-[#E8231A] hover:bg-[#d01f17] text-white text-sm font-bold px-6 py-2.5 rounded-xl transition-all duration-200 hover:-translate-y-px shadow-[0_4px_20px_rgba(232,35,26,0.35)] hover:shadow-[0_8px_30px_rgba(232,35,26,0.5)]">
+            <button className="shine relative bg-[#6366F1] hover:bg-[#4F46E5] text-white text-sm font-bold px-6 py-2.5 rounded-xl transition-all duration-200 hover:-translate-y-px shadow-[0_4px_20px_rgba(99,102,241,0.4)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.55)]">
               Get Started
             </button>
           </div>
 
-          {/* Mobile toggle */}
           <button
             className="md:hidden text-white/70 hover:text-white p-2 -mr-2 transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -83,20 +78,19 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? 'max-h-80' : 'max-h-0'}`}>
-        <div className="bg-[#080808]/95 backdrop-blur-2xl border-t border-white/[0.06] px-4 py-5 flex flex-col gap-1">
+        <div className="bg-[#030711]/95 backdrop-blur-2xl border-t border-[#6366F1]/10 px-4 py-5 flex flex-col gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-white/55 hover:text-white hover:bg-white/[0.04] transition-colors px-4 py-3 rounded-lg"
+              className="text-sm text-white/55 hover:text-white hover:bg-[#6366F1]/8 transition-colors px-4 py-3 rounded-lg"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </Link>
           ))}
-          <button className="mt-3 bg-[#E8231A] text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors text-center shadow-[0_4px_20px_rgba(232,35,26,0.3)]">
+          <button className="mt-3 bg-[#6366F1] text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors text-center shadow-[0_4px_20px_rgba(99,102,241,0.35)]">
             Get Started
           </button>
         </div>
