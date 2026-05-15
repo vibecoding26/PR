@@ -15,17 +15,17 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { label: 'Services', href: '#services' },
-    { label: 'How It Works', href: '#how-it-works' },
-    { label: 'Pricing', href: '#membership' },
-    { label: 'FAQ', href: '#faq' },
+    { label: 'Services', href: '/services' },
+    { label: 'How It Works', href: '/how-it-works' },
+    { label: 'Pricing', href: '/pricing' },
+    { label: 'Blog', href: '/blog' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-[#030711]/85 backdrop-blur-2xl border-b border-[#6366F1]/10 shadow-[0_1px_40px_rgba(99,102,241,0.08)]'
+          ? 'bg-[#0A0A0A]/85 backdrop-blur-2xl border-b border-[#C9A84C]/10 shadow-[0_1px_40px_rgba(201,168,76,0.08)]'
           : 'bg-transparent'
       }`}
     >
@@ -47,21 +47,21 @@ export default function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="relative text-sm text-white/50 hover:text-white transition-colors duration-200 px-4 py-2 rounded-lg hover:bg-[#6366F1]/8 group"
+                className="relative text-sm text-white/50 hover:text-white transition-colors duration-200 px-4 py-2 rounded-lg hover:bg-[#C9A84C]/8 group"
               >
                 {link.label}
-                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 group-hover:w-3/4 h-px bg-[#6366F1]/60 transition-all duration-300 rounded-full" />
+                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 group-hover:w-3/4 h-px bg-[#C9A84C]/60 transition-all duration-300 rounded-full" />
               </Link>
             ))}
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
-            <button className="text-sm text-white/50 hover:text-white transition-all duration-200 px-4 py-2 rounded-lg hover:bg-[#6366F1]/8">
+            <Link href="/login" className="text-sm text-white/50 hover:text-white transition-all duration-200 px-4 py-2 rounded-lg hover:bg-[#C9A84C]/8">
               Login
-            </button>
-            <button className="shine relative bg-[#6366F1] hover:bg-[#4F46E5] text-white text-sm font-bold px-6 py-2.5 rounded-xl transition-all duration-200 hover:-translate-y-px shadow-[0_4px_20px_rgba(99,102,241,0.4)] hover:shadow-[0_8px_30px_rgba(99,102,241,0.55)]">
-              Get Started
-            </button>
+            </Link>
+            <Link href="/signup" className="shine relative bg-[#C9A84C] hover:bg-[#E8C878] text-[#0A0A0A] text-sm font-bold px-6 py-2.5 rounded-xl transition-all duration-200 hover:-translate-y-px shadow-[0_4px_20px_rgba(201,168,76,0.4)] hover:shadow-[0_8px_30px_rgba(201,168,76,0.55)]">
+              Get Featured
+            </Link>
           </div>
 
           <button
@@ -79,20 +79,20 @@ export default function Header() {
       </div>
 
       <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? 'max-h-80' : 'max-h-0'}`}>
-        <div className="bg-[#030711]/95 backdrop-blur-2xl border-t border-[#6366F1]/10 px-4 py-5 flex flex-col gap-1">
+        <div className="bg-[#0A0A0A]/95 backdrop-blur-2xl border-t border-[#C9A84C]/10 px-4 py-5 flex flex-col gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-white/55 hover:text-white hover:bg-[#6366F1]/8 transition-colors px-4 py-3 rounded-lg"
+              className="text-sm text-white/55 hover:text-white hover:bg-[#C9A84C]/8 transition-colors px-4 py-3 rounded-lg"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
             </Link>
           ))}
-          <button className="mt-3 bg-[#6366F1] text-white text-sm font-bold px-5 py-3 rounded-xl transition-colors text-center shadow-[0_4px_20px_rgba(99,102,241,0.35)]">
-            Get Started
-          </button>
+          <Link href="/signup" className="mt-3 bg-[#C9A84C] text-[#0A0A0A] text-sm font-bold px-5 py-3 rounded-xl transition-colors text-center shadow-[0_4px_20px_rgba(201,168,76,0.35)]">
+            Get Featured
+          </Link>
         </div>
       </div>
     </header>
